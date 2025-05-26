@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beam Deflection Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Beam Deflection Calculator</h1>
+    </header>
+    <main>
+        <section id="calculator-interface">
+            <form id="calculator-form">
+                <div>
+                    <label for="beam-type">Beam Type:</label>
+                    <select id="beam-type" name="beam-type">
+                        <option value="rectangular">Rectangular</option>
+                        <option value="triangular">Triangular</option>
+                        <option value="circular">Circular</option>
+                    </select>
+                </div>
+
+                <div id="rectangular-inputs" class="beam-inputs">
+                    <div>
+                        <label for="rect-breadth">Breadth (m):</label>
+                        <input type="number" id="rect-breadth" name="rect-breadth" step="any" required>
+                    </div>
+                    <div>
+                        <label for="rect-height">Height (m):</label>
+                        <input type="number" id="rect-height" name="rect-height" step="any" required>
+                    </div>
+                </div>
+
+                <div id="triangular-inputs" class="beam-inputs" style="display: none;">
+                    <div>
+                        <label for="tri-breadth">Base (m):</label> <!-- Changed label from 'breadth' to 'base' for clarity -->
+                        <input type="number" id="tri-breadth" name="tri-breadth" step="any" required>
+                    </div>
+                    <div>
+                        <label for="tri-height">Height (m):</label>
+                        <input type="number" id="tri-height" name="tri-height" step="any" required>
+                    </div>
+                </div>
+
+                <div id="circular-inputs" class="beam-inputs" style="display: none;">
+                    <div>
+                        <label for="circ-radius">Radius (m):</label>
+                        <input type="number" id="circ-radius" name="circ-radius" step="any" required>
+                    </div>
+                </div>
+
+                <div id="common-inputs"> <!-- Inputs common to all or most types -->
+                    <div>
+                        <label for="length">Length (m):</label>
+                        <input type="number" id="length" name="length" step="any" required>
+                    </div>
+                    <div>
+                        <label for="load">Tip Load (kN):</label>
+                        <input type="number" id="load" name="load" step="any" required>
+                    </div>
+                    <div>
+                        <label for="pointx">Point x (m):</label>
+                        <input type="number" id="pointx" name="pointx" step="any" required>
+                    </div>
+                </div>
+
+                <button type="submit">Calculate</button>
+                <button type="button" id="reset-button">Reset</button>
+            </form>
+        </section>
+        <section id="results">
+            <div id="results-output">
+                <!-- Results will be dynamically inserted here -->
+                <p>Please enter beam parameters and click Calculate.</p>
+            </div>
+            <div id="error-output" style="color: red;">
+                <!-- Error messages will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Modernized Deflections Calculator</p>
+    </footer>
+    <script src="calculator.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

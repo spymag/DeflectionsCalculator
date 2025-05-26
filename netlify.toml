@@ -1,0 +1,8 @@
+[build]
+  # This is the directory to publish (relative to the root of your repo)
+  publish = "/"
+
+  # By default, Netlify runs "npm run build". 
+  # Since we have a static site with no build step, 
+  # we set an empty command to override this.
+  command = ""
